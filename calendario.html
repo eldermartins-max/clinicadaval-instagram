@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calendário de Conteúdo — Clínica da Val</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #F7EDE8; color: #2C1810; }
+.header { background: #2C1810; padding: 28px 40px; }
+.header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; background: #C0603A; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.header h1 { font-size: 20px; font-weight: 700; color: #E8A87C; }
+.header p { font-size: 13px; color: #9A7A70; margin-top: 2px; }
+.header-sub { font-size: 12px; color: #7A5A50; margin-top: 8px; }
+.month-title { background: #3D2218; color: #E8A87C; font-size: 16px; font-weight: 700; padding: 14px 40px; margin-top: 0; }
+.container { max-width: 920px; margin: 0 auto; padding: 28px 20px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6B4A40; }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+.week-block { margin-bottom: 28px; }
+.week-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #A0786A; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #E8D0C8; }
+.stories-strip { background: #2C1810; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+.stories-strip-title { font-size: 11px; font-weight: 700; color: #C0603A; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+.stories-list { display: flex; gap: 8px; flex-wrap: wrap; }
+.story-pill { background: #3D2218; color: #E8A87C; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+.posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.post-card { background: #FFF8F5; border-radius: 12px; border: 1px solid #E8D0C8; overflow: hidden; page-break-inside: avoid; }
+.post-card-top { padding: 12px 14px 10px; border-bottom: 1px solid #F0DDD5; display: flex; align-items: center; justify-content: space-between; }
+.post-date { font-size: 12px; font-weight: 700; color: #2C1810; }
+.post-day { font-size: 11px; color: #A0786A; margin-left: 4px; }
+.format-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+.badge-reel { background: #F0E0D8; color: #8B2500; }
+.badge-post { background: #E8EEF8; color: #1A3A6B; }
+.badge-carrossel { background: #E8F2EC; color: #1A5035; }
+.post-card-body { padding: 12px 14px; }
+.post-topic { font-size: 13px; font-weight: 700; color: #2C1810; margin-bottom: 4px; line-height: 1.4; }
+.post-category { font-size: 10px; color: #C0603A; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.caption-block { background: #F5EAE4; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+.caption-label { font-size: 10px; color: #A0786A; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.caption-text { font-size: 11px; color: #3D2218; line-height: 1.6; white-space: pre-wrap; }
+.hashtags { font-size: 10px; color: #C0603A; line-height: 1.7; }
+.summary-bar { background: #2C1810; border-radius: 12px; padding: 16px 24px; margin-bottom: 24px; display: flex; gap: 28px; flex-wrap: wrap; }
+.summary-item { text-align: center; }
+.summary-num { font-size: 22px; font-weight: 700; color: #E8A87C; }
+.summary-label { font-size: 11px; color: #9A7A70; margin-top: 2px; }
+.page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+<div style="background:#2C1810;padding:12px 40px;display:flex;gap:12px;flex-wrap:wrap;">
+<a href="index.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:transparent;color:#E8A87C;border:1px solid #C0603A;">📋 Plano de Ação</a>
+<a href="calendario.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:#C0603A;color:#fff;">📅 Calendário</a>
+<a href="faixas-preco.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:transparent;color:#E8A87C;border:1px solid #C0603A;">💰 Faixas de Preço</a>
+</div>
+
+
+<div class="header">
+  <div class="header-top">
+    <div class="avatar">CV</div>
+    <div>
+      <h1>Clínica da Val — Calendário de Conteúdo</h1>
+      <p>@clinicadaval · Estética Avançada · Barueri - SP</p>
+    </div>
+  </div>
+  <p class="header-sub">Legendas prontas para copiar · Maio (restante) e Junho 2026</p>
+</div>
+
+<!-- MAIO -->
+<div class="month-title">Maio 2026 — Semanas restantes</div>
+<div class="container">
+  <div class="summary-bar">
+    <div class="summary-item"><div class="summary-num">6</div><div class="summary-label">Reels</div></div>
+    <div class="summary-item"><div class="summary-num">9</div><div class="summary-label">Posts / Carrosséis</div></div>
+    <div class="summary-item"><div class="summary-num">3</div><div class="summary-label">Semanas</div></div>
+    <div class="summary-item"><div class="summary-num">15</div><div class="summary-label">Conteúdos</div></div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#C0603A;"></div>Reel</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3483FA;"></div>Post (foto)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#00A650;"></div>Carrossel</div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">Semana 1 — 15 a 17 de Maio</div>
+    <div class="stories-strip">
+      <div class="stories-strip-title">💬 Stories da semana</div>
+      <div class="stories-list">
+        <span class="story-pill">Enquete: você cuida da pele todo dia?</span>
+        <span class="story-pill">Bastidores da clínica</span>
+        <span class="story-pill">CTA: "agende pelo link na bio"</span>
+        <span class="story-pill">Horário de atendimento</span>
+      </div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Sex 15/05</span><span class="post-day">Sexta-feira</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial</div>
+          <div class="post-topic">Microagulhamento — transformação da pele</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Essa agulhinhas têm o poder de transformar a sua pele 🤯✨
+
+O microagulhamento estimula a produção de colágeno de dentro pra fora — e o resultado é uma pele visivelmente mais firme, uniforme e com aquele brilho que a gente ama.
+
+Tratamos flacidez, manchas, poros dilatados, cicatrizes de acne e muito mais. Tudo de forma segura e com protocolo personalizado pra você 🌿
+
+Quer saber se é pra você? Me chama e a gente conversa 💬
+📍 Clínica da Val — Bethaville, Barueri
+🔗 Link na bio para agendar sua avaliação</div></div>
+          <div class="hashtags">#microagulhamento #esteticafacial #cuidadoscomapele #clinicadaval #barueri #bethaville #skincare #peleperfeita #colageno #tratamentofacial</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Sáb 16/05</span><span class="post-day">Sábado</span></div><span class="format-badge badge-post">📸 POST</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Sobrancelha</div>
+          <div class="post-topic">Design de sobrancelhas — por que fazer?</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">A sobrancelha emoldura o rosto e muda TUDO no olhar 👁️✨
+
+Design personalizado pra valorizar o seu formato de rosto, com técnica precisa e resultado natural. E o melhor: você sai linda na mesma hora 🌿
+
+Valores a partir de R$ 75 — e ainda combinamos com depilação, tintura ou brow lamination!
+
+Vem nos visitar 💛
+📍 Bethaville, Barueri — Terça a Sábado
+🔗 Agenda na bio</div></div>
+          <div class="hashtags">#designdesobrancelha #sobrancelhas #browlamination #esteticaavancada #clinicadaval #barueri #brow #sobrancelhaperfeita #olhar #beleza</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">Semana 2 — 19 a 24 de Maio</div>
+    <div class="stories-strip">
+      <div class="stories-strip-title">💬 Stories da semana</div>
+      <div class="stories-list">
+        <span class="story-pill">Caixinha: "me manda sua dúvida sobre botox"</span>
+        <span class="story-pill">Enquete: você já fez peeling?</span>
+        <span class="story-pill">Bastidor: dia de atendimento</span>
+        <span class="story-pill">Contagem regressiva para vaga especial</span>
+        <span class="story-pill">Repost de resultado de paciente</span>
+      </div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Ter 19/05</span><span class="post-day">Terça-feira</span></div><span class="format-badge badge-carrossel">📖 CARROSSEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial — Educativo</div>
+          <div class="post-topic">O que é intradermoterapia? (3 slides)</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Arrasta pra ver o que a intradermoterapia pode fazer pela sua pele 👉
+
+Um dos procedimentos mais completos que temos aqui na Clínica da Val: tratamos flacidez, manchas e hidratação com microinjeções ricas em ativos direto na derme.
+
+Resultado progressivo e duradouro — porque a gente não quer um efeito passageiro, a gente quer transformação de verdade 🌿
+
+Sessão a partir de R$ 310 | Com avaliação gratuita
+📍 Bethaville, Barueri · 🔗 Link na bio pra agendar</div></div>
+          <div class="hashtags">#intradermoterapia #tratamentofacial #hidratacaofacial #manchas #flacidez #skincare #esteticaavancada #clinicadaval #barueri #pele</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Qua 20/05</span><span class="post-day">Quarta-feira</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Sobrancelha</div>
+          <div class="post-topic">Brow Lamination — antes e depois</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Brow lamination: o segredo das sobrancelhas perfeitas 🤫✨
+
+Esse procedimento alinha, modela e fixa os fios deixando o resultado daquelas sobrancelhas naturais e cheias — sem micropigmentação!
+
+O efeito dura de 6 a 8 semanas e você sai com o look pronto no mesmo dia 💛
+
+A partir de R$ 230. Me chama pra agendar 📲
+📍 Clínica da Val — Bethaville, Barueri</div></div>
+          <div class="hashtags">#browlamination #sobrancelhas #laminacaosobrancelhas #brow #esteticaavancada #clinicadaval #barueri #bethaville #sobrancelhaperfeita #beleza</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Qui 22/05</span><span class="post-day">Quinta-feira</span></div><span class="format-badge badge-post">📸 POST</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Corporal — Diferencial</div>
+          <div class="post-topic">Botox nas axilas — fim do suor excessivo</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Você sabia que o botox vai muito além do rosto? 💡
+
+O botox nas axilas é a solução definitiva para quem sofre com suor excessivo — bloqueia a ação das glândulas sudoríparas e você fica meses sem se preocupar com manchas na roupa.
+
+O procedimento é rápido, seguro e o resultado dura em média 6 meses. Uma aplicação e você esquece o problema!
+
+Quer saber mais? Me manda mensagem 📲
+🔗 Link na bio pra agendar sua avaliação</div></div>
+          <div class="hashtags">#botoxaxilas #suorexcessivo #hiperidrose #botox #esteticacorporal #clinicadaval #barueri #bethaville #qualidadedevida #procedimentosesteticos</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Sex 23/05</span><span class="post-day">Sexta-feira</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial</div>
+          <div class="post-topic">Peeling químico — renovação da pele</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">O peeling químico é o reset que a sua pele precisa! 🔄✨
+
+Ele remove as células mortas e estimula a renovação celular — resultado? Pele mais lisa, luminosa, manchas reduzidas e textura uniforme.
+
+O protocolo é personalizado conforme o seu tipo de pele e a queixa que você quer tratar.
+
+A partir de R$ 600 | Sem downtime na maioria dos casos
+📍 Clínica da Val — Bethaville, Barueri
+Me chama pra agendar uma avaliação 💬</div></div>
+          <div class="hashtags">#peelingquimico #renovacaocutanea #manchas #pele #esteticafacial #skincare #clinicadaval #barueri #glowskin #tratamentopele</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">Semana 3 — 26 a 31 de Maio</div>
+    <div class="stories-strip">
+      <div class="stories-strip-title">💬 Stories da semana</div>
+      <div class="stories-list">
+        <span class="story-pill">Quiz: qual procedimento é pra você?</span>
+        <span class="story-pill">Depoimento de paciente em vídeo</span>
+        <span class="story-pill">Convite para junho: "vagas abertas"</span>
+        <span class="story-pill">Enquete: facial ou corporal primeiro?</span>
+      </div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Ter 27/05</span><span class="post-day">Terça-feira</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Capilar e Labial</div>
+          <div class="post-topic">Preenchimento labial — naturalidade em primeiro lugar</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Lábios mais bonitos, sem perder a naturalidade ✨
+
+O preenchimento com ácido hialurônico: quando o resultado é bom, ninguém percebe que você fez. Todo mundo só nota que você está mais bonita 😍
+
+Hidratamos, definimos e adicionamos volume de forma equilibrada.
+
+A partir de R$ 1.490 por 1ml | Resultado imediato
+Me chama pra marcar sua avaliação 📲
+📍 Clínica da Val — Bethaville, Barueri</div></div>
+          <div class="hashtags">#preenchimentolabial #labios #acidohialuronico #preenchimento #esteticafacial #clinicadaval #barueri #labiosperfeitos #naturalidade #beleza</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Qua 28/05</span><span class="post-day">Quarta-feira</span></div><span class="format-badge badge-carrossel">📖 CARROSSEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial — Educativo</div>
+          <div class="post-topic">O que é nutrição injetável com NCTF?</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">A pele com aquele glow que você ama não é por acaso 🌟
+
+A nutrição e hidratação injetável com NCTF é um coquetel de vitaminas, aminoácidos e ácido hialurônico aplicado diretamente na pele.
+
+Resultado nas primeiras sessões: pele mais luminosa, firme e com aquela textura linda que todo mundo repara 💛
+
+📍 Clínica da Val · A partir de R$ 1.000
+🔗 Link na bio pra agendar</div></div>
+          <div class="hashtags">#NCTF #nutricaoinjetavel #hidratacaofacial #glowskin #pele #esteticafacial #skincare #clinicadaval #barueri #vitaminas</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Sex 30/05</span><span class="post-day">Sexta-feira</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial</div>
+          <div class="post-topic">Bioestimulador — colágeno de volta</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Quer um rosto mais firme e jovem sem parecer que "fez alguma coisa"? 👀
+
+O bioestimulador de colágeno estimula o seu próprio corpo a produzir colágeno de forma gradual e natural.
+
+Trabalhamos com Radiesse, Rennova Diamond, Elleva e Sculptra — escolhemos juntas na avaliação o melhor pra você 💛
+
+Me chama pra marcar 📲
+📍 Clínica da Val — Bethaville, Barueri</div></div>
+          <div class="hashtags">#bioestimulador #colageno #radiesse #sculptra #elleva #esteticafacial #clinicadaval #barueri #firmeza #esteticaavancada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JUNHO -->
+<div class="month-title page-break">Junho 2026 — Mês completo</div>
+<div class="container">
+  <div class="summary-bar">
+    <div class="summary-item"><div class="summary-num">8</div><div class="summary-label">Reels</div></div>
+    <div class="summary-item"><div class="summary-num">12</div><div class="summary-label">Posts / Carrosséis</div></div>
+    <div class="summary-item"><div class="summary-num">4</div><div class="summary-label">Semanas</div></div>
+    <div class="summary-item"><div class="summary-num">20</div><div class="summary-label">Conteúdos</div></div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">Semana 1 — 1 a 7 de Junho</div>
+    <div class="stories-strip">
+      <div class="stories-strip-title">💬 Stories da semana</div>
+      <div class="stories-list">
+        <span class="story-pill">Bem-vindo a junho!</span>
+        <span class="story-pill">Caixinha: "o que você quer saber sobre botox?"</span>
+        <span class="story-pill">Bastidor: preparação pra atendimento</span>
+        <span class="story-pill">CTA agendamento semana</span>
+      </div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Seg 01/06</span></div><span class="format-badge badge-carrossel">📖 CARROSSEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial — Educativo</div>
+          <div class="post-topic">Botox: mitos e verdades (5 slides)</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Ainda tem muita gente com medo do botox por causa de informação errada! Arrasta pra ver os principais mitos 👉
+
+Botox bem aplicado = resultado natural, expressão preservada e rosto mais descansado.
+
+Feminino a partir de R$ 1.390 | Masculino a partir de R$ 1.590
+📍 Clínica da Val — Bethaville, Barueri</div></div>
+          <div class="hashtags">#botox #mitos #toxinabotulinica #esteticafacial #clinicadaval #barueri #bethaville #botoxnatural #procedimentos #esteticaavancada</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Ter 02/06</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial</div>
+          <div class="post-topic">Antes e depois — botox facial feminino</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Esse é o resultado que a gente ama entregar ✨
+
+Botox clássico feminino — resultado que suaviza as linhas de expressão preservando o movimento natural.
+
+Parece que você dormiu bem, se alimentou direito, tomou muita água. Parece que a vida tá boa 💛
+
+A partir de R$ 1.390 · 📍 Clínica da Val · 🔗 Link na bio</div></div>
+          <div class="hashtags">#botox #antesedepois #toxinabotulinica #botoxfeminino #esteticafacial #clinicadaval #barueri #rejuvenescimento #expressao #beleza</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Qui 04/06</span></div><span class="format-badge badge-post">📸 POST</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Corporal</div>
+          <div class="post-topic">PEIM — tratamento de vasinhos</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Vasinhos nas pernas incomodam você? Temos solução! 🦵✨
+
+O PEIM aplica polidocanol diretamente nos microvasos, que somem progressivamente ao longo das sessões.
+
+Procedimento rápido, com mínimo desconforto e resultado que você já nota nas primeiras sessões 💛
+
+A partir de R$ 230/sessão
+📍 Clínica da Val — Bethaville, Barueri</div></div>
+          <div class="hashtags">#vasinhos #PEIM #tratamentodevasinhos #esteticacorporal #clinicadaval #barueri #bethaville #microvasos #pernas #estetica</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Sex 5/06</span></div><span class="format-badge badge-reel">🎬 REEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Capilar</div>
+          <div class="post-topic">Tratamento capilar ℔ fios transformados</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Você sabia que aqui na Clínica da Val a gente também cuida dos seus cabelos? 💆瀍♀️✨
+
+Nosso tratamento capilar é focado em nutrição profunda, brilho e saúde dos fios — perfeito pra quem tem cabelo ressecado ou com queda.
+
+Sessão a partir de R$ 330
+📍 Bethaville, Barueri · 🔗 Link na bio</div></div>
+          <div class="hashtags">#tratamentocapilar #cabelos #nutricaocapilar #cabelossaudaveis #clinicadaval #barueri #bethaville #haircare #cabelo #esteticacapilar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block">
+    <div class="week-label">Semana 2 — 8 a 14 de Junho</div>
+    <div class="stories-strip">
+      <div class="stories-strip-title">💬 Stories da semana</div>
+      <div class="stories-list">
+        <span class="story-pill">Enquete: você já fez bioestimulador?</span>
+        <span class="story-pill">Pergunta: "qual sua maior insegurança estética?"</span>
+        <span class="story-pill">Repost resultado corporal</span>
+        <span class="story-pill">CTA: "vagas essa semana"</span>
+      </div>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-card-top"><div><span class="post-date">Seg 08/06</span></div><span class="format-badge badge-carrossel">📖 CARROSSEL</span></div>
+        <div class="post-card-body">
+          <div class="post-category">Facial — Educativo</div>
+          <div class="post-topic">Bioestimulador: Radiesse, Sculptra ou Elleva?</div>
+          <div class="caption-block"><div class="caption-label">Legenda</div><div class="caption-text">Bioestimulador de colágeno — mas qual é o certo pra você? 🔔
+
+Não existe um melhor ou pior: cada um tem indicaçíY\�\�X��Y�X�\ˈ\��\�H�H[�[�\�\�Y�\�[���\�HYH�۝H]X[H[�\�\���HXZ\�H<'��]�[Xp�����ܘ]Z]H[�\�H]X[]Y\����Y[Y[�¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ�ؚ[�\�[][Y܈ܘYY\��H���[�H�[]�H���Y�[���\�]X�Y�X�X[��[�X�Y]�[ؘ\�Y\�HܙZ�]�[�\��[Y[���\�]X�X]�[��YO�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��\�K�
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���ܜܘ[�]���]��\��H���]�Xȏ��\�����\�HHYYYH8�%�ܙ\�H��[^�YO�]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��\��H�\�������H�Z]H�H]Y[H]Y\��\�[Y����ܜ��[H�\�\��XHH<'䪸�*������H�\�����\�H\�HHYYYH�X�[HH�ܙ\�H��[^�YH8�%�Y^��[�0�[Y]���HY[ܘHH\\�ꛘ�XHH[H��H������\��ۘ[^�Y�<'�/�H\�\�H�
+L��\����¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ���ܙ\�[��[^�YH�\�Y[YYYH�\�]X�X�ܜܘ[��ܜܘ[��[�X�Y]�[ؘ\�Y\�Hؙ]]�[H�\�]X�Hܙ\�[Y��؛�O�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��]ZHLK�
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\����'������[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���\[\�HX�X[�]���]��\��H���]�Xȏ�ZXܛ�Y�Y[�p�����X�X[8�%�܈�]\�[\�Y�\�O�]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��X�ܙH[�H��XH�[H�X�\�\�\��\��]�H8�*<'��HZXܛ�Y�Y[�p�����X�X[Y�[�H��۝ܛ���ܜ�Y�H\��[Y]�X\�HXܙ\��[�H[XH�܈�]\�[]YH\�H[��˂���L�\�[Y�\�X[�[�B�'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ��ZXܛ�Y�Y[�X�[�X�X[�X�[���ZXܛ�Y�Y[�X�[��\�]X�X]�[��YH��[�X�Y]�[ؘ\�Y\�H�X�[��\��Z]����[X\]ZXY�[Hؙ[^�H�\Y�Y[�][ۏ�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H���^L��
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���؜�[��[O�]���]��\��H���]�Xȏ�ZXܛ�Y�Y[�p�����H�؜�[��[\��]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��X�ܙH��H\��؜�[��[\��Z]\���XH<'�c8�*��HZXܛ�Y�Y[�p������Y[��H�[\�Y�[�H��ܛX]�HXܙ\��[�H[��YYHH�ܛXHX���][Y[�H�]\�[8�%�[��p�[H�ZH�X�\�]YH�����^����������\�]YH�X��H\��Z]H<'�#B���
+��\�[Y�\�HHHH�[��¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�H0��<'�%�[���H�[��]���]���]��\��H�\�Y�ȏ��ZXܛ�Y�Y[�X�[���؜�[��[\��ZXܛ�Y�Y[�X�[��؜�[��[\��^YX������\�]X�X]�[��YH��[�X�Y]�[ؘ\�Y\�H؜����ۙ�YZ�ؙ[^�H��[X\]ZXY�[O�]����]����]����]����]����]��\��H��YZ�X���ȏ��]��\��H��YZ�[X�[���[X[�H�8�%MHH�HH�[���]���]��\��H��ܚY\�\��\���]��\��H��ܚY\�\��\]]H��'��ܚY\�H�[X[�O�]���]��\��H��ܚY\�[\�����[��\��H��ܞK\[��[�]Y]N�]X[��[��ۘ�\��H[���[�HXZ\����[����[��\��H��ܞK\[��\�[Y[��HX�Y[�O��[����[��\��H��ܞK\[��\��[[Y[���[H�\���8�%��][�X�\���[����[��\��H��ܞK\[���Z^[�N�0Y\��؜�H�Y[��[Y[����[����]����]���]��\��H����YܚY���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H���Y�MK�
+���[���]���[��\��H��ܛX]X�Y�H�Y�KX�\�����[��'���T�����S��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH����\\�]]���]���]��\��H���]�Xȏ���[�����\����ٚ[�8�%]X[HY�\�[���O��]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^���\����Y[Y[���[�ܰ�]�Z\�ؚ�]]���Y�\�[�\�8�%\��\�H�H[�[�\�]X[0�H�YX[�H����H<'�bB����[�����\�
+�K��L
+HY�]H�ٝ[�[Y[�K��ٚ[�
+���L
+H�[[�XHH�\�XK���]X[\���\��]�[X[[���[�\��H�ۜ�[H<'�¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ����[�����\���ٚ[��X�Y�X[\�ۚX���Y�]X�[٘X�X[ؚ[ܙ[[�[X�[��\�]X�Y�X�X[��[�X�Y]�[ؘ\�Y\�H�[H���[��\�O�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��\�M��
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���X�X[�]���]��\��H���]�Xȏ�Y[[��
+�ZXܛ�Y�[[Y[��8�%��������X�[�Y��]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��]X[��������X�[�H�\��][Y[����\�������\�[Y�0�HZ[�HXZ\�[�ܰ�]�[H<'�)x�*��Y[[��]p�[ZX��
+�ZXܛ�Y�[[Y[�Έ�������]�ܚ]�\�H�]\�X[��\�^\�HH�X�Y^�H�ܛXH[�YܘYK���YH�[XH�HY�[�\��XH]�[Xp�����B�'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ�������٘X�X[�Y[[��]Z[ZX���ZXܛ�Y�[[Y[����][Y[�٘X�X[��[�X�Y]�[ؘ\�Y\�H�X[��\��\�]X�Y�X�X[�[H���X�[�X�[��]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��]ZHN�
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\����'������[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���۝�\������]���]��\��H���]�Xȏ�\��[[Y[���[H�\���8�%[��\�\�[H����0�H����]�[�]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��[��\�\�[H���������X�\�H\�\�������<'��'����H�
+L8���[H]0�H
+��[H�\��¼'��X�[XHH�
+L8���[H]0�HL�[H�\���[X��[HX�Z][[��^[�Z\��H0�X�]�<'�/�'��H�]]�[K�\�Y\�H8�%\���HH��X�Y�0��<'�%�[���H�[��]���]���]��\��H�\�Y�ȏ��\��[[Y[���[Z�\�����[�X�Y]�[ؘ\�Y\�H�\�]X�Hؙ[^�H�[��\�\��X�[^�H����Y[Y[���\�]X���ؙ]]�[H�X�\��]�[�]]��ZYY��]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H���^NK�
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���ܜܘ[�]���]��\��H���]�Xȏ��[�\�[][Y܈�ܜܘ[8�%�\�Y^�H���ܜ��]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^����[�\�[][Y܈����0�H����H����8�%[H[X��[H�[�ٛܛXH��ܜ�H<'䪸�*���][[���X�Y^�[Z[�p�[[��H\\�ꛘ�XHH�[[]H[H��p����X�0�Y[��0�[��H��\˂���\�[Y�ܘYX[H�]\�[<'�/¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ�ؚ[�\�[][Yܘ�ܜܘ[ٛX�Y^���[[]H�\�]X�X�ܜܘ[��[�X�Y]�[ؘ\�Y\�H��ܜܘ[���Y�[����][Y[���ܜܘ[؛�O�]����]����]����]����]����]��\��H��YZ�X���ȏ��]��\��H��YZ�[X�[���[X[�H
+8�%��H�H�[���]���]��\��H��ܚY\�\��\���]��\��H��ܚY\�\��\]]H��'��ܚY\�H�[X[�O�]���]��\��H��ܚY\�[\�����[��\��H��ܞK\[��[�]Y]N��Y[��8�%�����ZYHH[O���[����[��\��H��ܞK\[���\�[Y��Y[��[Y[���X�X[��[����[��\��H��ܞK\[���N���[X\��Y�\�H�[�ȏ��[����[��\��H��ܞK\[���۝Y�[H�Yܙ\��]�H\�H�[���[����]����]���]��\��H����YܚY���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H���Y����
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\����'������[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���X�X[�]���]��\��H���]�Xȏ��ٚ[�8�%�]YH0�H�[ܙ[[�[p�������]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^��[H�\�YKY�]YHH��H\�X���ݙ[H8�%�ۚp��H��ٚ[�8�*��H�[ܙ[[�[p������[[�XHH[HH[����H�ܘK\�[][[��[\�[�HH��0�Y�[�ˈ�\�[YΈ[H��\][Y[�H�[�ٛܛXYH��H\]Y[H���]YH�����ZH<'�����L0���\�[Y���H�\��[YZ\�\��[X[�\¼'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ���ٚ[�ؚ[ܙ[[�[X�[��X�Y�X[\�ۚX��ٚ\�Y^�H�[H�\�]X�Y�X�X[��[�X�Y]�[ؘ\�Y\�H���Y�[�����[��\�O�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��\����
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���X�X[�]���]��\��H���]�Xȏ��Y[��[Y[���X�X[8�%�۝ܛ���]\�[�]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^���Y[��[Y[��]YH����\�X�H�Y[��[Y[��8�%\��H0�H�ؚ�]]��H<'�`{�#��*����YܙY�\�0�H�H0�XۚX�HH���\��0�[�X��H]Y[H\X�H<'�/�H\�\�H�K�L܈[[�'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�H0��YH�[XH<'���]���]���]��\��H�\�Y�ȏ���Y[��[Y[�٘X�X[�X�Y�X[\�ۚX����Y[��[Y[����۝ܛ���\�]X�Y�X�X[��[�X�Y]�[ؘ\�Y\�Hۘ]\�[YYHܙZ�]�[�\��[Y[��ؙ[^�O�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H��]ZH�K�
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\����'������[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���؜�[��[H8�%�][�������]���]��\��H���]�Xȏ��]ܛ��HZXܛ�Y�Y[�p�����8�%]X[���^�\���]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^���^�ZXܛ�Y�Y[�p�����\]ZO�ܘHH]�[X\���]ܛ��H<'�`��'��H�HX\�H�Y\�\�8����NL�'��H�H
+�Y\�\�8����̌�'��H
+�HL�Y\�\�8����
+��'��HL�H�Y\�\�8����
+L���YH�[XH�H�\�Y�X�\���[�\�0�HH�XHH<'�¼'��H�]]�[K�\�Y\�O�]���]���]��\��H�\�Y�ȏ�ܙ]ܛ��ZXܛ�Y�Y[�X�[��ZXܛ�Y�Y[�X�[���؜�[��[\��X[�][��[���[�X�Y]�[ؘ\�Y\�Hؙ]]�[H؜����\�H�\�X[�[�[XZ�]\ؙ[^�O�]����]����]���]��\��H���X�\����]��\��H���X�\�]���]���[��\��H���Y]H���^���
+���[���]���[��\��H��ܛX]X�Y�H�Y�K\�Y[��'��QS��[���]���]��\��H���X�\�X��H���]��\��H���X�]Y�ܞH���X�X[8�%�ݛ�0X���]���]��\��H���]�Xȏ����X\��[[��8�%�ZYY�[X��[H0�H��\�HH�Y[O�]���]��\��H��\[ۋX���ȏ�]��\��H��\[ۋ[X�[��Y�[�O�]��]��\��H��\[ۋ]^���Y[H[X��[H�ZYHH\\�ꛘ�XH8�%H\���0�HX���][Y[�H�ܛX[H<'䪸�*������X\��[[��[H0�XۚX�H\�X��Y�X�N��\�\��[[���p����X\��[�\��[H\�Y�X�X[YYK����\�[Y������XZ\�\��[��Y�H�ݙ[H8�%�[H�[��p�[H\��X�\�]YH�^��YH<'�#�H\�\�H�K�NL�'��H�0�[�X�HH�[8�%�]]�[K�\�Y\�H<'���]���]���]��\��H�\�Y�ȏ�؛��X\��[[���\�]X�[X\��[[�H��Y[\�X��YH��[�X��[[�X�H��[�X�Y]�[ؘ\�Y\�Hؙ]]�[H�X\��[[��ؙ[^�H�]]��ZYY��]����]����]����]����]����]����؛�O���[�
