@@ -3,310 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plano de Ação Instagram — @clinicadaval</title>
+<title>Clínica da Val — Estratégia Instagram 2025</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, sans-serif; background: #F7EDE8; color: #2C1810; }
-
-  .header { background: #2C1810; color: #fff; padding: 32px 40px; }
-  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
-  .avatar { width: 48px; height: 48px; border-radius: 50%; background: #C0603A; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff; flex-shrink: 0; }
-  .header h1 { font-size: 22px; font-weight: 700; color: #E8A87C; }
-  .header p { font-size: 14px; color: #b0948a; margin-top: 2px; }
-  .badge { display: inline-block; background: #C0603A; color: #fff; font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-top: 10px; }
-
-  .container { max-width: 860px; margin: 0 auto; padding: 32px 20px; }
-
-  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #A0786A; margin-bottom: 14px; }
-
-  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
-  .kpi { background: #FFF8F5; border-radius: 10px; padding: 18px 16px; border: 1px solid #E8D0C8; text-align: center; }
-  .kpi-label { font-size: 11px; color: #A0786A; margin-bottom: 6px; }
-  .kpi-value { font-size: 26px; font-weight: 700; color: #2C1810; }
-  .kpi-value.red { color: #8B2500; }
-  .kpi-sub { font-size: 11px; color: #B89080; margin-top: 4px; }
-
-  .card { background: #FFF8F5; border-radius: 12px; padding: 24px; border: 1px solid #E8D0C8; margin-bottom: 20px; }
-  .card h3 { font-size: 15px; font-weight: 700; color: #2C1810; margin-bottom: 16px; }
-
-  .funnel-bar { margin-bottom: 10px; }
-  .funnel-bar-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
-  .funnel-bar-label span:first-child { color: #6B4A40; }
-  .funnel-bar-label span:last-child { font-weight: 700; color: #2C1810; }
-  .funnel-track { background: #EDD8D0; border-radius: 6px; height: 20px; overflow: hidden; }
-  .funnel-fill { height: 100%; border-radius: 6px; }
-  .funnel-note { font-size: 12px; color: #A0786A; margin-top: 10px; font-style: italic; }
-
-  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
-  .chart-container { background: #FFF8F5; border-radius: 12px; padding: 20px; border: 1px solid #E8D0C8; }
-  .chart-container h3 { font-size: 13px; font-weight: 700; color: #2C1810; margin-bottom: 14px; }
-
-  .bar-item { margin-bottom: 8px; }
-  .bar-row { display: flex; align-items: center; gap: 8px; }
-  .bar-name { font-size: 12px; color: #6B4A40; width: 65px; flex-shrink: 0; }
-  .bar-track { flex: 1; background: #EDD8D0; border-radius: 4px; height: 14px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 4px; }
-  .bar-pct { font-size: 12px; font-weight: 700; color: #2C1810; width: 42px; text-align: right; flex-shrink: 0; }
-
-  .diagnosis { margin-bottom: 20px; }
-  .diag-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px; margin-bottom: 8px; }
-  .diag-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-  .diag-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-  .diag-item p { font-size: 13px; line-height: 1.5; }
-  .diag-danger { background: #F5DDD8; }
-  .diag-danger h4 { color: #6B1A0A; }
-  .diag-danger p { color: #8B3020; }
-  .diag-warn { background: #F5EAD8; }
-  .diag-warn h4 { color: #6B4A00; }
-  .diag-warn p { color: #8B6210; }
-  .diag-ok { background: #E8F2EC; }
-  .diag-ok h4 { color: #1A5035; }
-  .diag-ok p { color: #276642; }
-
-  .phase { margin-bottom: 16px; }
-  .phase-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .phase-tag { font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; }
-  .phase-tag.red { background: #F5DDD8; color: #8B2500; }
-  .phase-tag.orange { background: #F5EAD8; color: #8B5500; }
-  .phase-tag.green { background: #E8F2EC; color: #1A6040; }
-  .action-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .action-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.6; color: #4A3028; }
-  .action-list li::before { content: "→"; color: #C0603A; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-  .action-list li strong { font-weight: 700; color: #2C1810; }
-
-  .divider { border: none; border-top: 1px solid #E8D0C8; margin: 16px 0; }
-
-  .footer { background: #2C1810; color: #8A6A60; text-align: center; padding: 20px; font-size: 12px; margin-top: 20px; }
-  .footer strong { color: #E8A87C; }
-
-  .target-box { background: #2C1810; color: #fff; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .target-box .t-label { font-size: 12px; color: #B09088; }
-  .target-box .t-value { font-size: 22px; font-weight: 700; color: #E8A87C; }
-  .target-box .t-arrow { font-size: 28px; color: #C0603A; }
-
-  @media (max-width: 600px) {
-    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .charts-row { grid-template-columns: 1fr; }
-    .target-box { flex-direction: column; gap: 10px; }
-  }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+:root{--cream:#FAF6F1;--beige:#F0E8DE;--terracotta:#B5704A;--terracotta-dark:#8B5338;--terracotta-light:#D4956F;--brown:#5C3D2E;--text:#2C1810;--text-light:#7A5C4A;--white:#FFFFFF;--gold:#C9A96E;--green:#4A7C5C;--red:#B5454A;--shadow:rgba(181,112,74,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
 </style>
 </head>
 <body>
-
-<div class="header">
-  <div class="header-top">
-    <div class="avatar">VA</div>
-    <div>
-      <h1>@clinicadaval</h1>
-      <p>Dra. Valéria Martins · Clínica de Estética</p>
-    </div>
-  </div>
-  <span class="badge">Plano de Ação Instagram · Últimos 30 dias</span>
+<div style="background:linear-gradient(135deg,#5C3D2E,#B5704A,#D4956F);color:white;padding:80px 40px;text-align:center">
+<div style="display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:6px 20px;border-radius:50px;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px">Estratégia de Conteúdo · Instagram 2025</div>
+<h1 style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1.1;margin-bottom:16px">Clínica da <em>Val</em></h1>
+<p style="font-size:15px;opacity:.85;max-width:600px;margin:0 auto 32px;font-weight:300">Análise completa do perfil @clinicadaval + plano de ação, calendário editorial e sugestões de posts de preço</p>
+<div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap">
+<div style="text-align:center"><span style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;display:block">24,4K</span><span style="font-size:11px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Seguidores</span></div>
+<div style="text-align:center"><span style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;display:block">798</span><span style="font-size:11px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Posts</span></div>
+<div style="text-align:center"><span style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;display:block">Barueri</span><span style="font-size:11px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Localização</span></div>
 </div>
-<div style="background:#2C1810;padding:12px 40px;display:flex;gap:12px;flex-wrap:wrap;">
-<a href="index.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:#C0603A;color:#fff;">📋 Plano de Ação</a>
-<a href="calendario.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:transparent;color:#E8A87C;border:1px solid #C0603A;">📅 Calendário</a>
-<a href="faixas-preco.html" style="text-decoration:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;background:transparent;color:#E8A87C;border:1px solid #C0603A;">💰 Faixas de Preço</a>
+</div>
+<div style="max-width:1100px;margin:0 auto;padding:72px 24px">
+<p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B5704A;font-weight:600;margin-bottom:12px">Análise do Perfil</p>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#5C3D2E;margin-bottom:40px">Diagnóstico do <em style="color:#B5704A">Instagram</em></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:60px">
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(181,112,74,.15);border-top:4px solid #4A7C5C">
+<h3 style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4A7C5C;margin-bottom:20px">✦ Pontos Fortes</h3>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>24,4K seguidores</strong> — excelente base para clínica local em Barueri</p>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>Identidade visual consistente</strong> — paleta bege/terracota elegante e bem aplicada</p>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>Personal branding forte</strong> — Dra. Val como rosto humaniza e gera confiança</p>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>Antes e Depois</strong> — formato mais eficaz para conversão em estética</p>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>Reels ativos</strong> — conteúdo em vídeo mostrando procedimentos em tempo real</p>
+<p style="font-size:14px;margin-bottom:10px">✓ <strong>Link WhatsApp na bio</strong> — facilita contato direto e agendamentos</p>
+<p style="font-size:14px">✓ <strong>798 posts</strong> — histórico de conteúdo e atividade consistente</p>
+</div>
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(181,112,74,.15);border-top:4px solid #B5454A">
+<h3 style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#B5454A;margin-bottom:20px">✦ Oportunidades de Melhoria</h3>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Bio incompleta</strong> — horários cortados; informações chave ficam ocultas</p>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Apenas 3 Highlights</strong> — faltam: preços, depoimentos, FAQ, procedimentos</p>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Foco excessivo em botox</strong> — portfólio diverso sub-representado</p>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Falta conteúdo educativo</strong> — poucas explicações sobre outros procedimentos</p>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Transparência de preços ausente</strong> — posts de preços geram muito engajamento</p>
+<p style="font-size:14px;margin-bottom:10px">! <strong>Sem depoimentos em destaque</strong> — prova social é decisiva na jornada de compra</p>
+<p style="font-size:14px">! <strong>Pouca interatividade</strong> — faltam enquetes, quizzes e caixas de perguntas</p>
+</div>
 </div>
 
-<div class="container">
+<p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B5704A;font-weight:600;margin-bottom:12px">Estratégia</p>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#5C3D2E;margin-bottom:40px">Plano de <em style="color:#B5704A">Ação</em></h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px">
 
-  <p class="section-title">Métricas dos últimos 30 dias</p>
-  <div class="kpi-grid">
-    <div class="kpi">
-      <div class="kpi-label">Seguidores</div>
-      <div class="kpi-value">24.473</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Visualizações</div>
-      <div class="kpi-value">19.192</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Contas alcançadas</div>
-      <div class="kpi-value">2.545</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Visitas ao perfil</div>
-      <div class="kpi-value">462</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Cliques no link</div>
-      <div class="kpi-value red">25</div>
-      <div class="kpi-sub">⚠ muito baixo</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Taxa de engajamento</div>
-      <div class="kpi-value red">0,17%</div>
-      <div class="kpi-sub">ideal: 2–3%</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Funil de conversão</h3>
-    <div class="funnel-bar">
-      <div class="funnel-bar-label"><span>Visualizações</span><span>19.192 (100%)</span></div>
-      <div class="funnel-track"><div class="funnel-fill" style="width:100%;background:#C0603A;"></div></div>
-    </div>
-    <div class="funnel-bar">
-      <div class="funnel-bar-label"><span>Contas alcançadas</span><span>2.545 (13,3%)</span></div>
-      <div class="funnel-track"><div class="funnel-fill" style="width:13.3%;background:#D4856A;"></div></div>
-    </div>
-    <div class="funnel-bar">
-      <div class="funnel-bar-label"><span>Visitas ao perfil</span><span>462 (2,4%)</span></div>
-      <div class="funnel-track"><div class="funnel-fill" style="width:9%;background:#E8A87C;"></div></div>
-    </div>
-    <div class="funnel-bar">
-      <div class="funnel-bar-label"><span>Cliques no link (agendamento)</span><span>25 (0,1%)</span></div>
-      <div class="funnel-track"><div class="funnel-fill" style="width:2%;background:#8B2500;"></div></div>
-    </div>
-    <p class="funnel-note">De cada 100 visualizações, menos de 1 pessoa chega a clicar no link de agendamento.</p>
-  </div>
-
-  <div class="charts-row">
-    <div class="chart-container">
-      <h3>Alcance por formato (visualizações)</h3>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Vídeos</span><div class="bar-track"><div class="bar-fill" style="width:94.5%;background:#C0603A;"></div></div><span class="bar-pct">94,5%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Reels</span><div class="bar-track"><div class="bar-fill" style="width:3%;background:#D4856A;"></div></div><span class="bar-pct">3,0%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Posts</span><div class="bar-track"><div class="bar-fill" style="width:2.1%;background:#E8A87C;"></div></div><span class="bar-pct">2,1%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Stories</span><div class="bar-track"><div class="bar-fill" style="width:0.3%;background:#B09088;"></div></div><span class="bar-pct">0,3%</span></div>
-      </div>
-    </div>
-    <div class="chart-container">
-      <h3>Interações por formato</h3>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Stories</span><div class="bar-track"><div class="bar-fill" style="width:81%;background:#2C1810;"></div></div><span class="bar-pct">81%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Posts</span><div class="bar-track"><div class="bar-fill" style="width:9.5%;background:#C0603A;"></div></div><span class="bar-pct">9,5%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Reels</span><div class="bar-track"><div class="bar-fill" style="width:7.1%;background:#D4856A;"></div></div><span class="bar-pct">7,1%</span></div>
-      </div>
-      <div class="bar-item">
-        <div class="bar-row"><span class="bar-name">Vídeos</span><div class="bar-track"><div class="bar-fill" style="width:2.4%;background:#B09088;"></div></div><span class="bar-pct">2,4%</span></div>
-      </div>
-    </div>
-  </div>
-
-  <p class="section-title">Diagnóstico</p>
-  <div class="diagnosis">
-    <div class="diag-item diag-danger">
-      <div class="diag-icon">🚨</div>
-      <div><h4>Taxa de engajamento de 0,17% — muito abaixo do ideal</h4><p>A média saudável para clínicas de estética é 2–3%. O conteúdo está sendo visto, mas não está gerando ação (curtidas, comentários, salvamentos). Isso afeta diretamente a entrega do algoritmo.</p></div>
-    </div>
-    <div class="diag-item diag-danger">
-      <div class="diag-icon">🚨</div>
-      <div><h4>Apenas 25 cliques no link em 30 dias — funil de agendamento quebrado</h4><p>Mesmo com 462 visitas ao perfil, menos de 6% clicam no link. Isso indica que a bio não tem CTA claro ou o link não leva diretamente ao agendamento.</p></div>
-    </div>
-    <div class="diag-item diag-warn">
-      <div class="diag-icon">⚠️</div>
-      <div><h4>85,2% do alcance é de quem já segue — pouca descoberta por novos pacientes</h4><p>Reels tém apenas 3% das visualizações, sendo o único formato que o Instagram distribui organicamente para não-seguidores. Está sendo subutilizado para uma clínica de estética.</p></div>
-    </div>
-    <div class="diag-item diag-warn">
-      <div class="diag-icon">⚠️</div>
-      <div><h4>Stories geram 81% das interações, mas têm apenas 0,3% das visualizações</h4><p>Quem vê as stories se engaja muito bem — o problema é a frequência e o volume de postagem. Stories interativos diários aumentam o alcance orgânico com seguidores.</p></div>
-    </div>
-    <div class="diag-item diag-ok">
-      <div class="diag-icon">✅</div>
-      <div><h4>Base sólida de 24.473 seguidores</h4><p>Existe audiência. O trabalho agora é converter visualizações em visitas ao perfil e visitas em agendamentos — sem precisar crescer muito mais em seguidores antes de monetizar.</p></div>
-    </div>
-  </div>
-
-  <p class="section-title">Meta de curto prazo</p>
-  <div class="target-box">
-    <div><div class="t-label">Cliques no link (atual)</div><div class="t-value">25/mês</div></div>
-    <div class="t-arrow">→</div>
-    <div><div class="t-label">Meta em 60 dias</div><div class="t-value">150+/mês</div></div>
-    <div class="t-arrow">→</div>
-    <div><div class="t-label">Novos contatos estimados</div><div class="t-value">~30/mês</div></div>
-  </div>
-
-  <p class="section-title">Plano de ação — 3 fases</p>
-
-  <div class="card">
-    <div class="phase-header">
-      <span class="phase-tag red">🔴 Semana 1–2 — Urgente</span>
-    </div>
-    <ul class="action-list">
-      <li><div><strong>Corrigir o link na bio.</strong> Usar Linktree, Milkshake ou link direto para o WhatsApp de agendamento. A bio deve ter uma CTA clara: "Agende sua consulta aqui 👇" com o link logo abaixo.</div></li>
-      <li><div><strong>Adicionar CTA ao final de cada conteúdo.</strong> Todo vídeo, post e story deve terminar com "Link na bio para agendar" ou "Me chama no WhatsApp". Sem CTA = sem conversão.</div></li>
-      <li><div><strong>Postar nos horários de pico.</strong> Os dados mostram pico de atividade às 15h. Priorizar Quinta, Sexta e Quarta — os dias com mais seguidores ativos. Agendar os posts com antecedência.</div></li>
-      <li><div><strong>Ativar botão de agendamento no perfil.</strong> O Instagram permite adicionar botão de "Reservar" diretamente no perfil (via integrações como Doctoralia, Calendly ou WhatsApp Business). Isso elimina o clique extra no link.</div></li>
-    </ul>
-
-    <hr class="divider">
-
-    <div class="phase-header">
-      <span class="phase-tag orange">🟡 Mês 1 — Crescimento Orgânico</span>
-    </div>
-    <ul class="action-list">
-      <li><div><strong>Criar ao menos 2 Reels por semana com antes/depois.</strong> Reels são o único formato que o Instagram distribui para quem não te segue. Para clínicas de estética, transformações de procedimentos (com autorização da paciente) são o conteúdo com maior potencial viral. Mostrar naturalidade gera mais resultado que produções elaboradas.</div></li>
-      <li><div><strong>Stories interativos todos os dias.</strong> Enquetes ("Você conhece o botox preventivo? Sim / Não"), caixinhas de perguntas ("Me manda sua dúvida sobre [procedimento]"), contagem regressiva de promoções. Stories interativos aumentam a entrega para seguidores — quanto mais interagem, mais o algoritmo mostra.</div></li>
-      <li><div><strong>Hashtags locais + de procedimento.</strong> Exemplos: #clinicadestetica[cidade] #botox[cidade] #preenchimento[cidade] #skincare[cidade]. Usar entre 8–15 hashtags relevantes aumenta a chance de aparecer para não-seguidores da região que buscam por esses serviços.</div></li>
-      <li><div><strong>Adicionar localização em todos os posts.</strong> O Instagram distribui conteúdo com localização para usuários que pesquisam por aquela cidade ou bairro. É gratuito e aumenta o alcance local — exatamente o público-alvo da clínica.</div></li>
-      <li><div><strong>Criar série de conteúdo educativo sobre procedimentos.</strong> Ex: "O que acontece no seu rosto após os 30 anos", "3 mitos sobre botox", "Quando devo começar a fazer preenchimento". Conteúdo educativo gera salvamentos, que é o sinal de engajamento que mais impulsiona o algoritmo.</div></li>
-    </ul>
-
-    <hr class="divider">
-
-    <div class="phase-header">
-      <span class="phase-tag green">🟢 Mês 2–3 — Escala</span>
-    </div>
-    <ul class="action-list">
-      <li><div><strong>Impulsionar os Reels com melhor desempenho orgânico.</strong> Com R$ 15–30/dia é possível alcançar mulheres de 25–55 anos no raio de 10 km da clínica. A regra de ouro: só impulsionar o que já performa bem organicamente — o algoritmo amplifica o que já funciona.</div></li>
-      <li><div><strong>Programa de indicação via Stories.</strong> Incentivar pacientes a marcar @clinicadaval nos resultados dos procedimentos. Cada repost nos Stories funciona como prova social e cria conteúdo autêntico sem custo. Pode-se oferecer desconto ou brinde para quem postar.</div></li>
-      <li><div><strong>Criar Highlights organizados no perfil.</strong> "Procedimentos", "Resultados", "Depoimentos", "Preços & FAQ". Com 462 visitas ao perfil por mês, um perfil bem organizado aumenta a taxa de conversão de visitante para paciente. Quem chega ao perfil precisa entender em segundos o que a clínica oferece.</div></li>
-      <li><div><strong>Colaborações com outros perfis da região.</strong> Parcerias com nutricionistas, academias, salões de beleza para Lives e Reels colaborativos. O Instagram notifica os seguidores de ambos os perfis, gerando alcance cruzado.</div></li>
-    </ul>
-  </div>
-
-  <div class="card" style="background:#F5EAE4;">
-    <h3 style="font-size:13px;">🗓 Resumo da cadência semanal sugerida</h3>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;">
-      <thead>
-        <tr style="background:#2C1810;color:#E8A87C;">
-          <th style="padding:8px 12px;text-align:left;border-radius:6px 0 0 0;">Formato</th>
-          <th style="padding:8px 12px;text-align:center;">Frequência</th>
-          <th style="padding:8px 12px;text-align:left;border-radius:0 6px 0 0;">Objetivo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid #E8D0C8;">
-          <td style="padding:8px 12px;">Reels</td>
-          <td style="padding:8px 12px;text-align:center;font-weight:700;">2x/semana</td>
-          <td style="padding:8px 12px;color:#6B4A40;">Alcançar novos pacientes</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D0C8;background:#FFF8F5;">
-          <td style="padding:8px 12px;">Stories interativos</td>
-          <td style="padding:8px 12px;text-align:center;font-weight:700;">Diário</td>
-          <td style="padding:8px 12px;color:#6B4A40;">Engajamento e entrega ao feed</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D0C8;">
-          <td style="padding:8px 12px;">Posts (foto/carrossel)</td>
-          <td style="padding:8px 12px;text-align:center;font-weight:700;">3x/semana</td>
-          <td style="padding:8px 12px;color:#6B4A40;">Conteúdo educativo / prova social</td>
-        </tr>
-        <tr style="background:#FFF8F5;">
-          <td style="padding:8px 12px;">Reels impulsionados</td>
-          <td style="padding:8px 12px;text-align:center;font-weight:700;">1x/mês</td>
-          <td style="padding:8px 12px;color:#6B4A40;">Ampliar alcance local com anúncio</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">01</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">✏️</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFEBEE;color:#C62828">Prioridade Alta</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Otimizar a Bio</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Reescrever a bio para mostrar o diferencial completo: credencial, especialidade, horários e localização sem truncar.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">02</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">📌</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFEBEE;color:#C62828">Prioridade Alta</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Expandir Highlights</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Criar Highlights: Preços, Procedimentos, Depoimentos, FAQ, Antes & Depois, Promoções. Capa personalizada para cada.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">03</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">💰</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFEBEE;color:#C62828">Prioridade Alta</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Posts de Faixa de Preços</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Publicar mensalmente carrosséis com preços dos procedimentos. Transparência gera confiança e filtra o público ideal.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">04</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">🎥</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFF8E1;color:#E65100">Prioridade Média</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Reels Educativos Virais</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Criar Reels no formato "o que acontece com seu rosto quando…" e "mitos e verdades sobre…" para alcance orgânico.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">05</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">⭐</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFEBEE;color:#C62828">Prioridade Alta</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Depoimentos em Destaque</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Coletar e publicar regularmente depoimentos de pacientes (com autorização). Prova social aumenta conversão em até 40%.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">06</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">📊</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFF8E1;color:#E65100">Prioridade Média</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Diversificar Procedimentos</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Criar séries temáticas: "Semana do Bioestimulador", "Mês da Sobrancelha Perfeita" para apresentar todo portfólio.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">07</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">💬</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#FFF8E1;color:#E65100">Prioridade Média</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Interatividade nos Stories</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Implementar caixas de perguntas semanais, enquetes e quizzes. "Você sabia que o botox dura X meses?"</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">08</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">📅</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#E8F5E9;color:#2E7D32">Prioridade Baixa</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Calendário Editorial Fixo</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">3 posts/semana + Stories diários + 1 Reel semanal. Consistência é o segredo do algoritmo.</p>
+</div><div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(181,112,74,.15);position:relative;overflow:hidden">
+<div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:#F0E8DE;position:absolute;top:-8px;right:16px;line-height:1">09</div>
+<div style="width:48px;height:48px;background:linear-gradient(135deg,#D4956F,#B5704A);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px">🎯</div>
+<span style="display:inline-block;padding:3px 10px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;background:#E8F5E9;color:#2E7D32">Prioridade Baixa</span>
+<h3 style="font-size:15px;font-weight:700;color:#5C3D2E;margin-bottom:8px">Collab & Indicações</h3>
+<p style="font-size:13px;color:#7A5C4A;line-height:1.6">Parcerias com influenciadoras locais de Barueri/Alphaville e programa de indicações entre pacientes.</p>
+</div>
 
 </div>
 
-<div class="footer">
-  Análise gerada com base nos dados do Instagram Insights · <strong>@clinicadaval</strong> · Últimos 30 dias
+<p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B5704A;font-weight:600;margin-bottom:12px">Planejamento Editorial</p>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#5C3D2E;margin-bottom:16px">Calendário de <em style="color:#B5704A">Posts</em></h2>
+<p style="font-size:15px;color:#7A5C4A;font-weight:300;margin-bottom:40px">Sugestão de conteúdo para Maio, Junho e Julho de 2025 com mix de formatos: Reels, Carrossel, Stories e Posts.</p>
+
+<div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(181,112,74,.15);margin-bottom:24px">
+<div style="display:inline-block;background:linear-gradient(135deg,#B5704A,#D4956F);color:white;padding:8px 24px;border-radius:50px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px">Maio 2025 — Tema: Transparência & Portfólio</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+<div style="background:#E3F2FD;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#1565C0;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 1</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Botox — mitos e verdades
+📑 Carrossel: 💰 Faixa de Preços Facial
+🖼 Post: Antes & Depois sobrancelha</div></div><div style="background:#F3E5F5;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#6A1B9A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 2</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Aplicando bioestimulador
+📑 Carrossel: 5 razões para preenchimento labial
+🖼 Post: Antes & Depois botox feminino</div></div><div style="background:#FFF3E0;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#E65100;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 3</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Dia na clínica com a Dra. Val
+💰 Carrossel: Faixa de Preços Corporal
+🖼 Post: Antes & Depois olheiras</div></div><div style="background:#E8F5E9;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#2E7D32;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 4</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Skinbooster — o que é?
+💰 Carrossel: Faixa de Preços Sobrancelha
+🖼 Post: Antes & Depois peeling</div></div>
+</div>
 </div>
 
+<div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(181,112,74,.15);margin-bottom:24px">
+<div style="display:inline-block;background:linear-gradient(135deg,#B5704A,#D4956F);color:white;padding:8px 24px;border-radius:50px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Junho 2025</div>
+<p style="font-size:14px;color:#7A5C4A;margin-bottom:16px"><strong style="color:#B5704A">Tema:</strong> "Inverno é a melhor época para tratamentos" — peelings, microagulhamento e bioestimuladores.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+<div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 1</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Por que fazer peeling no inverno?
+📑 Carrossel: Guia cuidados de inverno
+🖼 Post: A/D Microagulhamento</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 2</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">💰 Carrossel: Faixa de preços Facial
+🎬 Reel: Rotina pós-botox
+🖼 Post: A/D Preenchimento labial</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 3</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Enzimas — o que são?
+📑 Carrossel: 5 tratamentos pro inverno
+⭐ Post: Depoimento em destaque</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 4</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🔴 Live: Tirando dúvidas ao vivo
+💰 Carrossel: Faixa de preços Corporal
+🎬 Reel: Resultado bioestimulador 1 mês</div></div>
+</div>
+</div>
+
+<div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 16px rgba(181,112,74,.15);margin-bottom:60px">
+<div style="display:inline-block;background:linear-gradient(135deg,#B5704A,#D4956F);color:white;padding:8px 24px;border-radius:50px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Julho 2025</div>
+<p style="font-size:14px;color:#7A5C4A;margin-bottom:16px"><strong style="color:#B5704A">Tema:</strong> "Autoestima em alta" — foco em transformação, resultados de pacientes e série corporal.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+<div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 1</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🎬 Reel: Botox axilas — como funciona?
+💰 Carrossel: Faixa de preços Corporal
+🖼 Post: A/D Bioestimulador corporal</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 2</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">📑 Carrossel: Mitos sobre estética corporal
+🎬 Reel: Sessão redução de gordura
+⭐ Post: Depoimento transformação</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 3</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">💰 Carrossel: Faixa de preços Facial
+🎬 Reel: Antes e depois Profhilo
+📑 Carrossel: O que é bioremodelação?</div></div><div style="background:#F0E8DE;border-radius:12px;padding:16px"><div style="font-size:11px;font-weight:700;color:#B5704A;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Semana 4</div><div style="font-size:12px;line-height:1.7;color:#2C1810;white-space:pre-line">🔴 Live: Q&A — tudo sobre preenchimentos
+🎬 Reel: Retrospectiva dos melhores resultados
+💰 Carrossel: Faixa de preços Sobrancelha</div></div>
+</div>
+</div>
+
+<p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B5704A;font-weight:600;margin-bottom:12px">Transparência de Preços</p>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#5C3D2E;margin-bottom:16px">Sugestão de Posts de <em style="color:#B5704A">Faixa de Preços</em></h2>
+<p style="font-size:15px;color:#7A5C4A;font-weight:300;margin-bottom:40px">Posts que geram alto engajamento e qualificam o público. Apresente preços com elegância.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:60px">
+
+<div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(181,112,74,.15)">
+<div style="padding:28px 28px 20px;background:linear-gradient(135deg,#5C3D2E,#8B5338);color:white">
+<h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;font-style:italic;margin-bottom:6px">facial</h3>
+<p style="font-size:12px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Clínica da Val · Estética Avançada</p>
+</div>
+<div style="padding:24px 28px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Botox clássico — feminino</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.390</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Botox face completa — feminino</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.390</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Botox clássico — masculino</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.590</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Botox face completa — masculino</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.590</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Preenchimento ácido hialurônico (1ml)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.490</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Bioestimulador 1 (Radiesse / Rennova)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.200</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Bioestimulador 2 (Elleva / Sculptra)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.600</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Skinbooster (Restylane)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.290</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Profhilo — Bioremodelação</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.490</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Nutrição + hidratação injetável (NCTF)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.000</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Intradermoterapia (flacidez / manchas)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 310</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Microagulhamento m.m.p.</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 420</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Peelings químicos</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 600</div></div>
+</div>
+<div style="background:#F0E8DE;padding:12px 28px;font-size:11px;color:#7A5C4A;font-style:italic">* Valores estimados por sessão. Plano de tratamento individualizado.</div>
+</div><div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(181,112,74,.15)">
+<div style="padding:28px 28px 20px;background:linear-gradient(135deg,#5C3D2E,#8B5338);color:white">
+<h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;font-style:italic;margin-bottom:6px">corporal</h3>
+<p style="font-size:12px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Clínica da Val · Estética Avançada</p>
+</div>
+<div style="padding:24px 28px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Botox axilas (minimizar suor)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.610</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Bioestimulador 1 (Radiesse / Rennova)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.200</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Bioestimulador 2 (Elleva / Sculptra)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 2.600</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Preenchimento ácido hialurônico / sessão</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 5.900</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Intradermoterapia / intramuscular (enzimas)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 310</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Peim — aplicação para vasinhos / sessão</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 230</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Sessão perda de medida (gordura)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 410</div></div>
+</div>
+<div style="background:#F0E8DE;padding:12px 28px;font-size:11px;color:#7A5C4A;font-style:italic">* Valores estimados por sessão. Plano de tratamento individualizado.</div>
+</div><div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(181,112,74,.15)">
+<div style="padding:28px 28px 20px;background:linear-gradient(135deg,#5C3D2E,#8B5338);color:white">
+<h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;font-style:italic;margin-bottom:6px">sobrancelha</h3>
+<p style="font-size:12px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Clínica da Val · Estética Avançada</p>
+</div>
+<div style="padding:24px 28px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Design de sobrancelhas</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 75</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Design + depilação do buço</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 110</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Design + buço + tintura</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 170</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Design + tintura</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 130</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Design + brow lamination</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 230</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Micropigmentação das sobrancelhas</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 740</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Retorno micropigmentação (21d–3m)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 190</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Retorno micropigmentação (3–6m)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 320</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Retorno micropigmentação (6–12m)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 420</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Retorno micropigmentação (12–24m)</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 520</div></div>
+</div>
+<div style="background:#F0E8DE;padding:12px 28px;font-size:11px;color:#7A5C4A;font-style:italic">* Valores estimados por sessão. Plano de tratamento individualizado.</div>
+</div><div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(181,112,74,.15)">
+<div style="padding:28px 28px 20px;background:linear-gradient(135deg,#5C3D2E,#8B5338);color:white">
+<h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;font-style:italic;margin-bottom:6px">capilar & labial</h3>
+<p style="font-size:12px;opacity:.75;letter-spacing:1px;text-transform:uppercase">Clínica da Val · Estética Avançada</p>
+</div>
+<div style="padding:24px 28px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Sessão tratamento capilar</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 330</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Preenchimento ácido hialurônico 1ml</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 1.490</div></div><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #F0E8DE;gap:12px"><div style="font-size:13px;color:#2C1810;flex:1">Micropigmentação labial</div><div style="font-size:15px;font-weight:700;color:#B5704A;white-space:nowrap">R$ 810</div></div>
+</div>
+<div style="background:#F0E8DE;padding:12px 28px;font-size:11px;color:#7A5C4A;font-style:italic">* Valores estimados por sessão. Plano de tratamento individualizado.</div>
+</div>
+
+</div>
+
+<p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B5704A;font-weight:600;margin-bottom:12px">Copy & Legendas</p>
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#5C3D2E;margin-bottom:16px">Sugestões de <em style="color:#B5704A">Legendas</em></h2>
+<p style="font-size:15px;color:#7A5C4A;font-weight:300;margin-bottom:32px">Textos prontos para os posts de preço e educativos.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:60px">
+<div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(181,112,74,.15);border-left:4px solid #B5704A">
+<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#B5704A;font-weight:700;margin-bottom:12px">📑 Carrossel — Faixa de Preços Facial</div>
+<div style="font-size:13px;color:#2C1810;line-height:1.7;margin-bottom:12px;font-style:italic;white-space:pre-line">"Transparência é parte do nosso cuidado ✨
+
+Aqui na Clínica da Val você sabe exatamente o que paga antes de agendar.
+
+Desliza para ver a tabela completa dos procedimentos faciais 👆
+
+Cada valor é uma estimativa por sessão — porque todo tratamento começa com uma avaliação individual, sem compromisso.
+
+Quer entender qual procedimento é o ideal pra você? Me manda mensagem, tô aqui 🤍"</div>
+<div style="font-size:11px;color:#3897f0;line-height:1.6">#clinicadaval #esteticaavancada #botox #preenchimento #bioestimulador #esteticabarueri #dravaleríamartins #tabeladeprecos</div>
+</div><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(181,112,74,.15);border-left:4px solid #B5704A">
+<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#B5704A;font-weight:700;margin-bottom:12px">🎬 Reel — Mitos e Verdades do Botox</div>
+<div style="font-size:13px;color:#2C1810;line-height:1.7;margin-bottom:12px;font-style:italic;white-space:pre-line">"Você ainda acredita nessas mentiras sobre botox? 🤔
+
+MITO: botox deixa o rosto sem expressão.
+VERDADE: aplicação correta preserva toda a naturalidade ✅
+
+MITO: botox é só pra rugas profundas.
+VERDADE: o preventivo é o segredo das pessoas que parecem não envelhecer 😉
+
+Salva esse post pra compartilhar com quem precisa saber!
+📍Barueri · Av. Trindade, 254 sala 1117"</div>
+<div style="font-size:11px;color:#3897f0;line-height:1.6">#botox #mitoseverdades #esteticafacial #biomédica #clinicadaval #barueri #alphaville</div>
+</div><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(181,112,74,.15);border-left:4px solid #B5704A">
+<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#B5704A;font-weight:700;margin-bottom:12px">🖼 Post — Antes & Depois Bioestimulador</div>
+<div style="font-size:13px;color:#2C1810;line-height:1.7;margin-bottom:12px;font-style:italic;white-space:pre-line">"Colágeno de volta. Pele revitalizada. Autoestima nas alturas 🌿
+
+Resultado real de uma das nossas pacientes após o bioestimulador — um procedimento que estimula a produção natural de colágeno ao longo dos meses.
+
+Sem filtro. Sem edição. Só resultado 🤍
+
+Quer saber se o bioestimulador é indicado pra você? Link na bio ou chama no WhatsApp!"</div>
+<div style="font-size:11px;color:#3897f0;line-height:1.6">#bioestimulador #radiesse #sculptra #antesedepois #esteticaavancada #clinicadaval #colágeno</div>
+</div><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(181,112,74,.15);border-left:4px solid #B5704A">
+<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#B5704A;font-weight:700;margin-bottom:12px">💬 Stories — Interatividade</div>
+<div style="font-size:13px;color:#2C1810;line-height:1.7;margin-bottom:12px;font-style:italic;white-space:pre-line">"Qual procedimento você tem mais curiosidade?
+
+👆 Desliza e vota!
+[ ] Bioestimulador
+[ ] Profhilo
+[ ] Preenchimento labial
+[ ] Skinbooster
+
+O mais votado vira um Reel explicativo essa semana 🎬
+
+Me manda também pelo direct — adoro responder vocês por lá!"</div>
+<div style="font-size:11px;color:#3897f0;line-height:1.6">#stories #estetica #skincare #clinicadaval</div>
+</div>
+</div>
+
+<div style="background:linear-gradient(135deg,#5C3D2E,#B5704A);border-radius:20px;padding:40px;color:white;text-align:center;margin-bottom:40px">
+<div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;font-style:italic;margin-bottom:12px">Bio sugerida para o perfil</div>
+<div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px;max-width:500px;margin:0 auto;font-size:14px;line-height:1.8;text-align:left">
+Dra. Valéria Martins · Biomédica CRBM 51059<br>
+✨ Estética Avançada em Barueri<br>
+💉 Botox · Preenchimento · Bioestimulador<br>
+📍 Av. Trindade, 254 · Sala 1117 · Barueri<br>
+🕐 Ter–Qui 13h–21h · Sex–Sáb 8h–17h<br>
+👇 Agende pelo WhatsApp
+</div>
+</div>
+
+</div>
+<div style="background:#5C3D2E;color:rgba(255,255,255,.7);text-align:center;padding:40px;font-size:13px">
+<p>Estratégia desenvolvida para <strong style="color:#D4956F">Clínica da Val — @clinicadaval</strong></p>
+<p style="margin-top:8px;font-size:12px">Barueri · SP · Estética Avançada · Dra. Valéria Martins</p>
+</div>
 </body>
-</html>
+                                                                                                                                                                                                     </html>
